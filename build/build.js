@@ -27,11 +27,6 @@ var rootPath = '..';
     removeCombined: true,
     findNestedDependencies: false,
     paths: {
-      'jquery': 'empty:',
-      'mustache': 'empty:',
-      'underscore': 'empty:',
-      'addthis': 'empty:',
-      'bootstrap': 'empty:'
     },
     modules: [
       {

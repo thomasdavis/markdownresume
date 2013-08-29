@@ -2,14 +2,14 @@
 require.config({
   paths: {
     // Major libraries
-    jquery: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min',
+    jquery: 'libs/jquery/jquery-min',
     underscore: 'libs/underscore/underscore', // https://github.com/amdjs
     backbone: 'libs/backbone/backbone', // https://github.com/amdjs
     prettyprint: 'libs/prettyprint/prettyprint',
     qtip: 'libs/qtip2/jquery.qtip.min',
-    mustache: 'https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.0/mustache.min',
+    mustache: 'libs/mustache/mustache',
     epiceditor: 'libs/epiceditor/epiceditor',
-    bootstrap: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min',
+    bootstrap: 'libs/bootstrap/bootstrap',
     // APIe
     modal: 'libs/modal/modal',
     form: 'libs/form/form',
@@ -18,7 +18,6 @@ require.config({
     // jquery plugins
     autogrow : 'libs/autogrow/autogrow',
     // External services
-    addthis : "https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51176d76142335d0",
 
     // Just a short cut so we can put our html outside the js dir
     // When you have HTML/CSS designers this aids in keeping them out of the js directory
