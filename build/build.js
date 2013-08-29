@@ -25,7 +25,7 @@ var rootPath = '..';
     dir: outputFolder + '/js',
     mainConfigFile: rootPath + '/js/main.js',
     removeCombined: true,
-    findNestedDependencies: false,
+    findNestedDependencies: true,
     paths: {
     },
     modules: [
