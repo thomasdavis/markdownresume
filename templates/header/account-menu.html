@@ -1,0 +1,25 @@
+
+    <% if (user !== null) { %>
+    
+    <li><button class="btn btn-blue js-newapi">New API</button></li>
+    <li>
+      <div style="height: 20px;display:inline-block;">
+      <a href="<%= user.get('login') %>" class="btn btn-right-join btn-grey btn-avatar">
+        <img style="width: 28px;" src="http://www.gravatar.com/avatar/<%= user.get('user').gravatar %>" />
+        <span>
+        <%= user.get('login') %>
+      </span>
+      </a>
+      <button class="btn btn-left-join btn-grey active js-account-menu"><span style="font-size: 20px;" class="icon">&#47;</span></button>
+
+<div style="clear: both;"></div>
+</div>
+    </li>
+   <!-- <li><button class="logout btn btn-grey" >Logout</button></li>-->
+    <% } else { %>
+    <li><div class="login">&nbsp;</div><li>
+
+    <li><button  class="signup btn btn-blue" >Signup</button></li>
+    <!--<li><button  class="login btn btn-grey" >Login</button></li>-->
+
+    <% }; %>

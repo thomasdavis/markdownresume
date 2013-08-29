@@ -1,0 +1,273 @@
+/*
+# Pricing
+
+# Heading
+
+```
+<h2 class="pricing-heading">PI PRICING PLANS</h2>
+<span class="pricing-tag">Change or cancel an APIs plan at anytime, no contracts, no problems.</span>
+```
+*/
+
+.pricing-heading {
+  font-weight: normal;
+  font-family: 'Nexa Bold';
+  font-size: 36px;
+  color:#171717;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.pricing-tag {
+  font-family: 'Nexa';
+  font-size: 24px;
+  padding-bottom: 30px;
+  display: inline-block;
+  margin:0 auto;
+  color:#333;
+}
+
+/*
+
+# Table
+
+```
+<div class="background light-grey pricing-container">
+
+<div class="tri-box yellow">
+  <span class='heading'>LIMITED API</span>
+</div>
+<div class="tri-box green">
+  <span class='heading'>PUBLIC API</span>
+</div>
+<div class="tri-box blue">
+  <span class='heading'>PRIVATE API</span>
+</div>
+<div style="clear: both;"></div>
+
+<div class="tri-box promo">
+  <span class="free">FREE</span>
+</div>
+<div class="tri-box promo">
+  <span class="price">$10</span><br />
+  <span class="promo-desc">A MONTH</span>
+</div><div class="tri-box promo">
+
+  <span class="price">$30</span><br />
+  <span class="promo-desc">A MONTH</span>
+</div>
+<div style="clear: both;"></div>
+
+<div class="tri-box ">
+  <ul>
+    <li><span class="list-heading yellow">FEATURES</span></li>
+    <li><span class="list-item">No collaboration</span></li>
+    <li><span class="list-item">Comments & notifications</span></li>
+    <li><span class="list-item">Viewable by API Engine users only</span></li>
+  </ul>
+
+</div>
+<div class="tri-box ">
+  <ul>
+    <li><span class="list-heading green">FEATURES</span></li>
+    <li><span class="list-item">Collaboration (optional)</span></li>
+    <li><span class="list-item">Write-only collaborators</span></li>
+    <li><span class="list-item">Comments and notifications</span></li>
+    <li><span class="list-item">Published to the web</span></li>
+  </ul>
+
+</div>
+<div class="tri-box ">
+  <ul>
+    <li><span class="list-heading blue">FEATURES</span></li>
+    <li><span class="list-item">Collaboration (optional)</span></li>
+    <li><span class="list-item">Read and write collaborators</span></li>
+    <li><span class="list-item">Comments and notifications</span></li>
+    <li><span class="list-item">Military grade encryption</span></li>
+  </ul>
+
+
+</div>
+<div style="clear: both;"></div>
+
+<div class="tri-box yellow"></div>
+<div class="tri-box green">
+  <span class='heading'>COLLABORATORS</span>
+</div>
+<div class="tri-box blue">
+  <span class='heading'>COLLABORATORS</span>
+</div>
+<div style="clear: both;"></div>
+<div class="tri-box "></div>
+<div class="tri-box promo">
+  <span class="price">$5</span><br />
+  <span class="promo-desc">PER COLLABORATOR <br />PER MONTH</span>
+</div><div class="tri-box promo">
+
+  <span class="price">$5</span><br />
+  <span class="promo-desc">PER COLLABORATOR <br />PER MONTH</span>
+</div>
+<div style="clear: both;"></div>
+
+</div>
+<div class="background blue"></div>
+```
+*/
+.pricing-container {
+  padding: 75px 0 50px 0;
+}
+.tri-box {
+  width: 320px;
+  background: #222;
+  float: left;
+  position: relative;
+  margin-right: 2px;
+  margin-bottom: 2px;
+}
+.tri-box:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0; 
+  height: 0; 
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid #F7F7F7;
+  
+  border-left: 15px solid transparent;
+
+}
+.tri-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tri-box ul li {
+  height: 50px;
+  border-bottom: 1px dotted #ebebeb;
+}
+.tri-box ul li:last-child {
+  border-bottom: none;
+  padding-bottom:10px;
+}
+.sign-up-and-create-btn{
+  width:100%;
+  text-align:center;
+}
+.sign-up-and-create-btn .sbtn {
+  margin:10px auto;
+  border: none;
+  color: #171717 !important;
+}
+.tri-box .list-heading {
+  line-height: 50px;
+  display: inline-block;
+  font-family: 'Nexa Bold';
+  font-size: 18px;
+  padding-left: 15px;
+  letter-spacing: 2px;
+}
+.tri-box .list-heading.yellow {
+  color: #fed563;
+}
+.tri-box .list-heading.green {
+  color: #65b04b;
+}
+.tri-box .list-heading.blue {
+  color: #019ff3; 
+}
+.tri-box .list-item {
+  display: inline-block;
+  line-height: 50px;
+  padding-left: 30px;
+  font-family: 'Nexa';
+  font-size: 14px;
+  color: #ebebeb;
+}
+.tri-box.promo {
+  text-align: center;
+  height: 170px;
+}
+.free {
+  display: inline-block;
+  font-size: 48px;
+  font-family: 'Nexa';
+  color: #ebebeb;
+  padding: 45px 0;
+
+}
+.price {
+  display: inline-block;
+  font-size: 72px;
+  font-family: 'Nexa';
+  color: #f7f7f7;
+  padding: 30px 0 0px 0;
+}
+.price.price-collab{
+  font-size: 48px;
+}
+  .promo-desc {
+    display: inline-block;
+    font-family: 'Nexa';
+    font-size: 14px;
+    color: #777;
+    line-height: 24px;
+  }
+.tri-box.yellow {
+  background: #fed563;
+  height:50px;
+  border-top:1px solid #e4bf59;
+  color: #333333;
+}
+.tri-box.yellow.hidden {
+  visibility: hidden;
+}
+.tri-box.green {
+  background: #65b04b;
+  height:50px;
+  border-top:1px solid #5b9e43;
+  color: #0c2f00;
+}
+.tri-box.blue {
+  background: #019ff3;
+  height:50px;
+  border-top:1px solid #018fda;
+  color: #00293f;
+}
+.tri-box.yellow .heading,
+.tri-box.green .heading,
+.tri-box.blue .heading {
+  line-height: 30px;
+}
+.tri-box .heading {
+  font-size: 20px;
+  display: inline-block;
+  padding: 12px 0 0 15px;
+  line-height: 16px;
+  font-family: 'Nexa';
+}
+.enterprise-heading {
+  padding-top: 50px;
+  padding-bottom: 15px;
+  font-family: 'Nexa Bold';
+  font-size:36px;
+  margin: 0;
+  text-align: left;
+  color: #FFF;
+}
+.enterprise-desc {
+  float: left;
+  color: #fff;
+  font-family:  'Nexa';
+  font-size: 24px;
+  display: inline-block;
+  margin-bottom:50px;
+  margin-top:0;
+}
+.enterprise-desc a{
+  color:#fed563;
+  text-decoration: none;
+}
+.enterprise-desc a:hover{
+  text-decoration: underline;
+}

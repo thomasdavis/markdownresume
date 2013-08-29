@@ -1,0 +1,77 @@
+{{#currentUser}}
+    <div class="well">
+   <div class="btn-group js-api-filter" data-toggle="buttons-radio" style="width: 400px; display: block; float: left;">
+
+  </div>
+{{/currentUser}}
+<!--
+    <a class="btn btn-primary js-new-api-button" style="float: right;" href="">New API</a>
+
+    --><div style="clear: both;"></div>
+  </div>
+
+
+<ul class="api-list">
+  {{#apis}}
+    {{>listtemplate}}
+  {{/apis}}
+    {{#apis.length}}
+  <li class="no-more">No more APIs</li>
+{{/apis.length}}
+</ul>
+
+{{#currentUser}}
+
+{{^apis}}
+     <div class="tempbox">
+   <!-- <span class="icon tempbox-close-icon js-close-modal">&#88;</span>-->
+    <div class="tempbox-container">
+      <span class="tempbox-title">Getting started</span>
+      <div style="clear: both;"></div>
+      <div class="box first">
+        <div class="tempbox-header">
+          <span class="icon">&#119;</span>
+          <p class="temptext">Public APIs are a search engine optimised,  more text and cost effective method of distributing </p>
+        </div>
+        <div class="tempbox-footer">
+          <button class="btn js-newapi btn-blue">CREATE A PUBLIC API</button>
+        </div>
+      </div>
+      <div class="box">
+        <div class="tempbox-header">
+          <span class="icon">&#110;</span>
+          <p class="temptext">Private APIs offer the security of mind that start-ups and companies need to develop their API.</p>
+        </div>
+        <div class="tempbox-footer">
+          <button class="btn btn-blue js-newapi">CREATE A PRIVATE API</button>
+        </div>
+      </div>
+      <div class="box last">
+        <div class="tempbox-header">
+          <span class="icon">&#115;</span>
+          <p class="temptext">Take a look at other companies and developers  API Engine perfect for distributing their API docs.</p>
+        </div>
+        <div class="tempbox-footer">
+          <a href="browse" class="btn btn-blue">EXPLORE APIs</a>
+        </div>
+      </div>
+      <div style="clear: both;"></div>
+    </div>
+  </div>
+  </div>
+{{/apis}}
+{{/currentUser}}
+
+{{^currentUser}}
+
+{{^apis}}
+<div class="no-more">This user doesn't have any public APIs yet</div>
+{{/apis}}
+{{/currentUser}}
+
+
+
+
+
+
+

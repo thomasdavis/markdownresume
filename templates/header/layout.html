@@ -1,0 +1,121 @@
+<div class="row">
+          <div class="col-lg-12">
+
+            <div class="bs-example">
+              <div class="navbar navbar-default">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Markdown Resume</a>
+                  </div>
+                  <div class="navbar-collapse collapse navbar-responsive-collapse">
+                    <ul class="nav navbar-nav">
+                      
+                      {{#username}}
+                      <li class="active"><a href="#">Edit</a></li>
+                      <li><a href="#">Settings</a></li>
+                      {{/username}}
+                      {{^username}}
+                      <li class="active"><a href="#">Home</a></li>
+                      
+                      {{/username}}
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                      {{#username}}
+                      <li><a href="#">Logout</a></li>
+                      {{/username}}
+                      {{^username}}
+                      <li><a href="#" class="signup-button">Signup</a></li>
+                      <li><a href="#" class="login-button">Login</a></li>
+                      
+                      {{/username}}
+                    </ul>
+                  </div><!-- /.nav-collapse -->
+              </div><!-- /.navbar -->
+
+
+            </div><!-- /example -->
+
+          </div>
+        </div>
+        <div id="signup-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Signup</h4>
+      </div>
+      <div class="modal-body">
+      <form class="bs-example form-horizontal">
+                <fieldset>
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                    <div class="col-lg-10">
+                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                      <button class="btn btn-default">Cancel</button> 
+                      <button type="submit" class="btn btn-primary">Submit</button> 
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+        <div id="login-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Modalada title</h4>
+      </div>
+      <div class="modal-body">
+    <form class="bs-example form-horizontal">
+                <fieldset>
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                    <div class="col-lg-10">
+                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                      <button class="btn btn-default">Cancel</button> 
+                      <button type="submit" class="btn btn-primary">Submit</button> 
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

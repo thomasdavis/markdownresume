@@ -1,0 +1,23 @@
+<ul class="api-menu-list resource-list">
+    {{#resources.models}}
+    <li class="{{active}}" data-resource-id="{{id}}" data-resource-resource="{{attributes.resource}}">
+      <a data-resource-id="{{id}}" href="#{{attributes.user}}/{{attributes.api}}/version/{{attributes.version}}/resource/{{id}}">
+		<span class="resource-label">{{attributes.label}}</span>
+    	<span class="resource-notification notification"></span>
+      </a>
+	  <div style="clear: both;">
+	  </div>
+    </li>
+    <li class="resource-submenu" style="display: none;">
+        <div class="method-sublist-container">
+            <div class="api-list-ajax">
+                <div class="ajax-cog">
+                </div>
+                <span class="loading">
+                    Loading
+                </span>
+            </div>
+        </div>
+    </li>
+    {{/resources.models}}
+</ul>

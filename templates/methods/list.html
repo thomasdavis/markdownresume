@@ -1,0 +1,24 @@
+
+<style>
+
+
+</style>
+<ul class="api-menu-list method-list" style="">
+
+{{#methods}}
+ 				<li data-method-id="{{attributes.method}}" class="{{active}}">
+
+<a data-method-id="{{attributes.method}}" href="{{attributes.user}}/{{attributes.api}}/version/{{attributes.version}}/resource/{{attributes.resource}}/{{attributes.method}}">
+
+<span class="method method-{{attributes.method}}">{{attributes.method}}</span>
+  
+ <span class="method-label">{{attributes.label}}</span>  
+
+  <span class="method-notification notification" data-resource-id="{{attributes.resource}}" data-method-id="{{attributes.method}}" style="display:none;"></span>
+
+</a>
+			  </li> 
+
+{{/methods}}
+
+</ul>     

@@ -1,0 +1,154 @@
+/*
+# Comments
+
+```
+<div class="comments-container">
+    <span class="comments-title">Comments</span>
+      <span class="markdown-help">Markdown help</span>
+      <div style="clear: both;"></div>
+<div class="comment-box">
+      <form class="" style="">
+
+    <a href="thomasdavis"><img class="comment-profile" src="http://www.gravatar.com/avatar/cff733cf90823edd218a834980379c61.jpg?d=wavatar"></a>
+  <div class="comment-text">
+              <textarea placeholder="Add a comment" class="comment-input input-xlarge" id="input01"></textarea>
+  </div>
+  <a href="" style="display: none;" class="btn btn-regular add-comment">Add Comment</a>
+      </form>
+  <div style="clear: both;"></div>
+</div>
+<div class="comments-list-container">
+<ul class="comments">
+
+  <li>
+    <a href="thomasdavis"><img class="comment-profile" src="http://www.gravatar.com/avatar/cff733cf90823edd218a834980379c61?d=wavatar"></a>
+    <div class="comment-content">
+      <a href="thomasdavis" class="comment-username">thomasdavis</a>
+      <p class="comment-message">Overviews can now have comments</p>
+      <p class="timeago" title="2012-11-19T03:51:39.313Z">about 3 hours</p>
+    </div>
+    <div style="clear: both;"></div>
+  </li>
+
+
+  <li>
+    <a href="thomasdavis"><img class="comment-profile" src="http://www.gravatar.com/avatar/cff733cf90823edd218a834980379c61?d=wavatar"></a>
+    <div class="comment-content">
+      <a href="thomasdavis" class="comment-username">thomasdavis</a>
+      <p class="comment-message">asdasd</p>
+      <p class="timeago" title="2012-11-19T03:51:27.491Z">about 3 hours</p>
+    </div>
+    <div style="clear: both;"></div>
+  </li>
+
+
+</ul></div>
+
+
+  </div>
+```
+.comment-heading {
+  padding-bottom: 15px;
+}
+*/
+
+.comments-title {
+  margin: 0;
+display: inline-block;
+font-size: 24px;
+float: left;
+}
+.markdown-help {
+  float: right;
+  font-size: 12px;
+  color: #39f;
+  line-height: 35px;
+  cursor: pointer;
+}
+
+.markdown-help:hover {
+  text-decoration: underline;
+}
+.comment-box {
+  padding: 30px 15px 30px 15px;
+  border-top: 1px solid #CCC;
+}
+.comment-profile {
+  float: left;
+  width: 60px;
+  padding: 1px;
+  border: 1px solid #ccc;
+}
+.comment-text {
+  width: 400px;
+  float: left;
+  margin-left: 20px;
+}
+.comment-input {
+  border: 1px solid #ccc;
+  padding: 10px;
+  vertical-align: top;
+  height: 40px;
+  width: 540px;
+    font-size: 14px;
+}
+.add-comment {
+  float: left;
+  margin-left: 85px;
+}
+.comment-username {
+  color: #4a92fd;
+  text-decoration: none;
+}
+.comment-username:hover {
+  text-decoration: underline;
+}
+.comment-input:focus {
+}
+  .comments {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .comments li {
+    padding: 30px 15px 30px 15px;
+    border-top: 1px solid #ccc;
+
+  }
+  .comment-content {
+    margin-left: 15px;
+    float: left;
+    width: 505px;
+  }
+
+  .comment-message {
+    line-height: 22px;
+    letter-spacing: 0px;
+  }
+  .dateposted {
+    color: #6b6d70;
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+
+  ::-webkit-input-placeholder {
+    font-size: 14px;
+    font-style: italic;
+}
+
+
+
+  .comments-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .comments-list > li {
+    margin-bottom: 20px;
+  }
+  .comment {
+    float: left;
+    width: 800px;
+    margin-left: 20px;
+  }

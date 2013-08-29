@@ -1,0 +1,53 @@
+/*
+# Icons
+
+*/
+
+
+
+.icon {
+  font-family: "ModernPics";
+  font-size: 18px;
+  color: #252f33;
+  cursor: pointer;
+}
+
+/*
+
+## Fav Icons 
+
+```
+  <img src="http://twitter.com/favicon.ico" />
+  <img src="http://facebook.com/favicon.ico" />
+
+```
+
+
+## Social network Icons 
+
+```
+  <span class="social-icon facebook"></span>
+  <span class="social-icon twitter"></span>
+  <span class="social-icon rss"></span>
+  <span class="social-icon google"></span>
+
+```
+
+*/
+.social-icon {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+}
+.social-icon.facebook {
+  background: url('../img/facebook.png');
+}
+.social-icon.twitter {
+  background: url('../img/twitter.png');
+}
+.social-icon.google {
+  background: url('../img/google.png');
+}
+.social-icon.rss {
+  background: url('../img/rss.png');
+}
