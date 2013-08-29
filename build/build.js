@@ -31,10 +31,6 @@ var rootPath = '..';
     modules: [
       {
         name: 'main'
-      },
-      {
-        name: 'views/home/page',
-        exclude: ['main']
       }
     ]
 });
