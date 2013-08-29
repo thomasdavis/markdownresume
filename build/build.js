@@ -35,7 +35,8 @@ var rootPath = '..';
       'jquery': 'empty:',
       'mustache': 'empty:',
       'underscore': 'empty:',
-      'addthis': 'empty:'
+      'addthis': 'empty:',
+      'bootstrap': 'empty:'
     },
     modules: [
       {
@@ -44,28 +45,12 @@ var rootPath = '..';
       {
         name: 'views/home/page',
         exclude: ['main']
-      },
-      {
-        name: 'views/home/pricing',
-        exclude: ['main']
-      },
-      {
-        name: 'views/help/page',
-        exclude: ['main']
-      },
-      {
-        name: 'views/home/features',
-        exclude: ['main']
-      },
-      {
-        name: 'views/legal/page',
-        exclude: ['main']
       }
     ]
 });
 var index = fs.readFileSync(rootPath + '/index.html', 'ascii');
 index = index.replace('css/styles.css', cloudfront + '/version/' + version + '/css/styles.css');
-index = index.replace('<base href="/repos/apiengine-client/" />', '');
+index = index.replace('<base href="/repos/resume/" />', '');
 index = index.replace(' data-main="js/main"', ' data-main="' + cloudfront + '/version/' + version + '/js/main"');
 fs.writeFileSync('output/index.html', index);
   rjs.optimize({
