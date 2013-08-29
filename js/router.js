@@ -4,8 +4,9 @@ define([
   'jquery',
   'underscore',
   'backbone',
-	'vm'
-], function (require, $, _, Backbone, Vm) {
+	'vm',
+  'views/home/page'
+], function (require, $, _, Backbone, Vm,HomeView) {
   var AppRouter = Backbone.Router.extend({
     routes: {
 
@@ -22,10 +23,8 @@ define([
     Backbone.router = router;
     router.on('route:home', function () {
       console.log('home');
-      require(['views/home/page'], function (HomeView) {
         var homeView = Vm.create(appView, 'page', HomeView, {});
         homeView.render();
-      });
     });
 		router.on('route:defaultAction', function (username) {
 		});

@@ -15,9 +15,9 @@ define([
           withCredentials: true
         };
         // If we have a csrf token send it through with the next request
-        if(typeof that.get('csrf') !== 'undefined') {
-          console.log(that.get('csrf'));
-          jqXHR.setRequestHeader('X-CSRF-Token', that.get('csrf'));
+        if(typeof that.get('_csrf') !== 'undefined') {
+          console.log(that.get('_csrf'));
+          jqXHR.setRequestHeader('X-CSRF-Token', that.get('_csrf'));
         }
       });
       this.on('change:auth', function (model) {
@@ -45,7 +45,8 @@ define([
     },
     login: function(creds) {
       // Do a POST to /session and send the serialized form creds
-      this.clear({silent: true});
+      //this.clear({silent: true});
+      creds._csrf = this.get('_csrf');
       this.save(creds, {
          success: function () {},
          wait: true
