@@ -35,12 +35,12 @@ define([
       var that = this;
  $.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
         // Your server goes below
-//        if(window.location.host === 'apiengine.io') {
-       //   options.url = 'https://x.apiengine.io' + options.url;
+        if(window.location.host === 'markdownresume.com') {
+          options.url = 'http://resumeserver.herokuapp.com' + options.url;
 
-       // } else {
+        } else {
           options.url = 'http://localhost:8080' + options.url;
-       // }
+        }
         //options.url = 'http://192.168.2.111:3000' + options.url;
       //  }// else {
         //options.url = 'http://d3gscmgl75g1oq.cloudfront.net' + options.url;
