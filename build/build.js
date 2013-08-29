@@ -7,13 +7,8 @@ var glob = require("glob")
 
 console.log(process.argv);
 
-var cloudfront = 'https://d3oqwi49u9bqjg.cloudfront.net';
+var cloudfront = 'https://d2jay9nudb1n8p.cloudfront.net';
 
-if(process.argv[2] === 'stage') {
-  cloudfront = 'https://d51ivijxlr7mx.cloudfront.net';
-} else if (process.argv[2] === 'vagrant') {
-  cloudfront = 'https://vagrant-client.apiengine.io:40443';
-}
 
 
 var version = Date.now();
