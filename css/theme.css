@@ -2,3 +2,13 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
 }
+
+body .navbar {
+  border: 0;
+  border-bottom: 1px solid #eee;
+  border-radius: 0;
+}
+
+.container-fluid {
+    padding: 0 15px;
+}

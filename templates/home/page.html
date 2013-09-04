@@ -1,9 +1,15 @@
-<div class="well">
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" style="padding-top: 15px;">
 	{{#email}}
   <h1>Welcome to Resume shit {{email}}</h1>
+  <div id="epiceditor"></div>
 	{{/email}}
 	{{^email}}
+	<p>Write your resume in markdown, and automatically generate a stylish resume, published on the internet with the option to download.</p>
 	<h1>who the fuck are you</h1>
 	{{/email}}
-
+</div>
+    </div>
 </div>
