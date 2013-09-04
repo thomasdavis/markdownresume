@@ -2,14 +2,20 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12" style="padding-top: 15px;">
-	{{#email}}
+  {{#email}}
   <h1>Welcome to Resume shit {{email}}</h1>
   <div id="epiceditor"></div>
-	{{/email}}
-	{{^email}}
-	<p>Write your resume in markdown, and automatically generate a stylish resume, published on the internet with the option to download.</p>
-	<h1>who the fuck are you</h1>
-	{{/email}}
+  {{/email}}
+  {{^email}}
+  <h1>What is MarkdownResume.com</h1>
+  <p>Write your resume in markdown, and automatically generate a stylish resume, published on the internet with the option to download.</p>
+  <h3>Features</h3>
+  <ul>
+    <li>Backed up and export anytime</li>
+    <li>Professionally designed themes that work on all platforms</li>
+    <li>See how many views your profile gets, and how many downloads</li>
+  </li>
+  {{/email}}
 </div>
     </div>
 </div>
