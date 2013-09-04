@@ -43,12 +43,12 @@ define([
     defaults: {
      
     },
-    login: function(creds) {
+    login: function(creds, callback) {
       // Do a POST to /session and send the serialized form creds
       //this.clear({silent: true});
       creds._csrf = this.get('_csrf');
       this.save(creds, {
-         success: function () {},
+         success: callback,
          wait: true
       });
     },
@@ -57,15 +57,14 @@ define([
       var that = this;
       this.destroy({
         success: function (model, resp) {
-        //  mixpanel.track('Logged out');
-        //  mixpanel.people.identify(null);
-          
+          that.clear();
           // Set auth to false to trigger a change:auth event
           // The server also returns a new csrf token so that
           // the user can relogin without refreshing the page
-          that.set({auth: false, csrf: resp.csrf});
+          that.set({auth: false, _csrf: resp._csrf});
           
-        }
+        },
+        wait: true
       });      
     },
     getAuth: function(callback) {

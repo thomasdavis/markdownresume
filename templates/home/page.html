@@ -1,3 +1,9 @@
 <div class="well">
-  <h1>Welcome to Resume shit</h1>
+	{{#email}}
+  <h1>Welcome to Resume shit {{email}}</h1>
+	{{/email}}
+	{{^email}}
+	<h1>who the fuck are you</h1>
+	{{/email}}
+
 </div>

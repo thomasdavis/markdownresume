@@ -2,33 +2,32 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'mustache',
   'models/session',
   'text!templates/home/page.html',
   'epiceditor'
-], function($, _, Backbone, Session, homeTemplate, marked){
+], function($, _, Backbone, Mustache, Session, homeTemplate, marked){
   var ExamplePage = Backbone.View.extend({
     el: '.page',
     initialize: function () {
       var that = this;
-      // Bind to the Session auth attribute so we
-      // make our view act recordingly when auth changes
+      Session.on('change:auth', function (session) {
+        that.render();
+      });
     },
     render: function () {
-      if(Session.get('auth')) {
-        Backbone.history.navigate(Session.get('login'), {trigger: true});
-      } else {
         var that = this;
         this.$el.hide().fadeIn(250);
         
         $('.top-bar-menu li a.active').removeClass('active');
         $('.top-bar-menu li a.home-button').addClass('active');
         if(Session.get('auth')){
-          this.$el.html(_.template(homeTemplate, {username: Session.get('login')}));
+          this.$el.html(Mustache.render(homeTemplate, {email: Session.get('email')}));
 
 
 
         } else {
-          this.$el.html(_.template(homeTemplate, {username: false, errors: Session.get('errors'), _: _})); 
+          this.$el.html(Mustache.render(homeTemplate, {email: false, errors: Session.get('errors'), _: _})); 
         }
 
 var height = $(window).height() - 105; 
@@ -79,7 +78,6 @@ var editor = new EpicEditor(opts).load();
 
 
 
-        }
     }, 
     clean: function () {
     }

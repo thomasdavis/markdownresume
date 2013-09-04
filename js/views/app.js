@@ -54,12 +54,13 @@ define([
 			var that = this;
       $(this.el).html(layoutTemplate);
 
-      var headerView = new HeaderView();
-      headerView.render();
 
 
 
       Session.getAuth(function () {
+        
+      var headerView = new HeaderView();
+      headerView.render();
         $('body').on('click', 'a', function (e) {
           if($(this).attr('href').substr(0,4) === 'http' || $(this).attr('href').substr(0,4) === 'mail') {
 
