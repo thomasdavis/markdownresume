@@ -4,15 +4,29 @@ define([
   'backbone',
   'mustache',
   'models/session',
+  'models/resume',
   'text!templates/home/page.html',
   'epiceditor'
-], function($, _, Backbone, Mustache, Session, homeTemplate, marked){
+], function($, _, Backbone, Mustache, Session, Resume, homeTemplate, marked){
   var ExamplePage = Backbone.View.extend({
     el: '.page',
     initialize: function () {
       var that = this;
       Session.on('change:auth', function (session) {
         that.render();
+      });
+      this.resume = new Resume;
+
+    },
+    events: {
+      'click .save-resume': 'saveResume' 
+    },
+    saveResume: function () {
+      var that = this;
+      this.resume.save({markdown: that.editor.exportFile()}, {
+        success: function () {
+          console.log(arguments);
+        }
       });
     },
     render: function () {
@@ -24,55 +38,62 @@ define([
         if(Session.get('auth')){
           this.$el.html(Mustache.render(homeTemplate, {email: Session.get('email')}));
 
-
+that.resume.fetch({
+  success: function (resume) {
+    var opts = {
+      container: 'epiceditor',
+      textarea: null,
+      basePath: '/repos/resume/',
+      clientSideStorage: false,
+      localStorageName: 'epiceditor',
+      useNativeFullscreen: true,
+      parser: marked,
+      file: {
+        name: 'epiceditor',
+        defaultContent: resume.get('markdown'),
+        autoSave: 100
+      },
+      theme: {
+        base: '/css/epiceditor/themes/base/epiceditor.css',
+        preview: '/css/epiceditor/themes/preview/github.css',
+        editor: '/css/epiceditor/themes/editor/epic-light.css'
+      },
+      button: {
+        preview: true,
+        fullscreen: true,
+        bar: "auto"
+      },
+      focusOnLoad: false,
+      shortcut: {
+        modifier: 18,
+        fullscreen: 70,
+        preview: 80
+      },
+      string: {
+        togglePreview: 'Toggle Preview Mode',
+        toggleEdit: 'Toggle Edit Mode',
+        toggleFullscreen: 'Enter Fullscreen'
+      },
+      autogrow: false
+    } 
+    that.editor = new EpicEditor(opts).load();
+  }
+})
 
         } else {
           this.$el.html(Mustache.render(homeTemplate, {email: false, errors: Session.get('errors'), _: _})); 
         }
 
-var height = $(window).height() - 105; 
+var height = $(window).height() - 180; 
 $("#epiceditor").height(height);
         window.onresize = function() {
-var height = $(window).height() - 105; 
+var height = $(window).height() - 180; 
+var width = $(window).width(); 
 $("#epiceditor").height(height);
+$("#epiceditor").width(width);
 }
-        var opts = {
-  container: 'epiceditor',
-  textarea: null,
-  basePath: '/repos/resume/',
-  clientSideStorage: true,
-  localStorageName: 'epiceditor',
-  useNativeFullscreen: true,
-  parser: marked,
-  file: {
-    name: 'epiceditor',
-    defaultContent: '',
-    autoSave: 100
-  },
-  theme: {
-    base: '/css/epiceditor/themes/base/epiceditor.css',
-    preview: '/css/epiceditor/themes/preview/github.css',
-    editor: '/css/epiceditor/themes/editor/epic-dark.css'
-  },
-  button: {
-    preview: true,
-    fullscreen: true,
-    bar: "auto"
-  },
-  focusOnLoad: false,
-  shortcut: {
-    modifier: 18,
-    fullscreen: 70,
-    preview: 80
-  },
-  string: {
-    togglePreview: 'Toggle Preview Mode',
-    toggleEdit: 'Toggle Edit Mode',
-    toggleFullscreen: 'Enter Fullscreen'
-  },
-  autogrow: false
-} 
-var editor = new EpicEditor(opts).load();
+
+        
 
 
 

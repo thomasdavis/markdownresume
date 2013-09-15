@@ -1,12 +1,23 @@
 
-<div class="container-fluid">
+
+  {{#email}}
+  <div class="container-fluid">
     <div class="row">
         <div class="col-md-12" style="padding-top: 15px;">
-  {{#email}}
-  <h1>Welcome to Resume shit {{email}}</h1>
+
+  <h2 style="float: left; width: 300px; margin-top: 0; margin-bottom: 15px;">Editing</h2>
+  <button class="btn btn-success save-resume" style="float: right; margin-bottom: 15px">Save</button>
+
+  </div>
+    </div>
+    
+</div>
   <div id="epiceditor"></div>
   {{/email}}
   {{^email}}
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" style="padding-top: 15px;">
   <h1>What is MarkdownResume.com</h1>
   <p>Write your resume in markdown, and automatically generate a stylish resume, published on the internet with the option to download.</p>
   <h3>Features</h3>
@@ -14,8 +25,8 @@
     <li>Backed up and export anytime</li>
     <li>Professionally designed themes that work on all platforms</li>
     <li>See how many views your profile gets, and how many downloads</li>
-  </li>
-  {{/email}}
-</div>
+  </ul>
+  </div>
     </div>
 </div>
+  {{/email}}
