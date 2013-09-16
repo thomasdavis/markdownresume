@@ -33,7 +33,7 @@ require([
 ], function(AppView, Vm, Router, norefclicky){
 
 
-  try{ clicky.init(66633495); }catch(e){}
+  try{ clicky.init(100653611); }catch(e){}
 
   var appView = Vm.create({}, 'AppView', AppView);
 
