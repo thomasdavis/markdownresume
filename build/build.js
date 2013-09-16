@@ -69,7 +69,7 @@ function cssIncImages(cssFile) {
   fs.copy(rootPath + '/favicon.ico', 'output/favicon.ico', function (){
     fs.copy(rootPath + '/css/img', outputFolder +'/css/img', function () {
     fs.copy(rootPath + '/img', outputFolder +'/img', function () {
-      fs.copy(rootPath + '/css', outputFolder +'/css', function () {
+      fs.copy(rootPath + '/css', 'output/css', function () {
 
 cssIncImages(outputFolder + '/css/styles.css');
       fs.copy('output', 'relic', function () {
