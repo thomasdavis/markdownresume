@@ -43,6 +43,7 @@ that.resume.fetch({
     var opts = {
       container: 'epiceditor',
       textarea: null,
+      basePath: '',
       clientSideStorage: false,
       localStorageName: 'epiceditor',
       useNativeFullscreen: true,
