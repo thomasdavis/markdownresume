@@ -5,12 +5,14 @@ define([
   'underscore',
   'backbone',
 	'vm',
-  'views/home/page'
-], function (require, $, _, Backbone, Vm,HomeView) {
+  'views/home/page',
+  'views/home/resume'
+], function (require, $, _, Backbone, Vm,HomeView, ResumeView) {
   var AppRouter = Backbone.Router.extend({
     routes: {
 
       '': 'home',
+      'resume/:id': 'resume',
       ':username': 'defaultAction' // All urls will trigger this route
     },
 
@@ -25,6 +27,11 @@ define([
       console.log('home');
         var homeView = Vm.create(appView, 'page', HomeView, {});
         homeView.render();
+    });
+    router.on('route:resume', function (id) {
+      console.log('home');
+        var resumeView = Vm.create(appView, 'page', ResumeView, {id: id});
+        resumeView.render();
     });
 		router.on('route:defaultAction', function (username) {
 		});
