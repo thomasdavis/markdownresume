@@ -28,7 +28,7 @@ that.resume.fetch({
     var opts = {
       container: 'epiceditor',
       textarea: null,
-      basePath: '/repos/resume/',
+      basePath: '',
       clientSideStorage: false,
       localStorageName: 'epiceditor',
       useNativeFullscreen: true,
