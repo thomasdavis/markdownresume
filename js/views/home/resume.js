@@ -38,11 +38,6 @@ that.resume.fetch({
         defaultContent: resume.get('markdown'),
         autoSave: 100
       },
-      theme: {
-        base: '/css/epiceditor/themes/base/epiceditor.css',
-        preview: '/css/epiceditor/themes/preview/github.css',
-        editor: '/css/epiceditor/themes/editor/epic-light.css'
-      },
       button: {
         preview: false,
         fullscreen: false,
@@ -61,6 +56,20 @@ that.resume.fetch({
       },
       autogrow: false
     } 
+    if(window.location.host === 'localhost') {
+      opts.theme = {
+        base: '../css/epiceditor/themes/base/epiceditor.css',
+        preview: '../css/epiceditor/themes/preview/github.css',
+        editor: '../css/epiceditor/themes/editor/epic-light.css'
+      }
+    } else {
+
+      opts.theme = {
+        base: '/css/epiceditor/themes/base/epiceditor.css',
+        preview: '/css/epiceditor/themes/preview/github.css',
+        editor: '/css/epiceditor/themes/editor/epic-light.css'
+      }
+    }
     that.editor = new EpicEditor(opts).load();
     that.editor.preview();
   }
