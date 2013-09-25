@@ -18,7 +18,7 @@ define([
     render: function () {
         var that = this;
         this.$el.hide().fadeIn(250);
-        
+        $('.navbar-nav .active').removeClass('active');
         $('.top-bar-menu li a.active').removeClass('active');
         $('.top-bar-menu li a.home-button').addClass('active');
           this.$el.html(Mustache.render(homeTemplate, {}));
@@ -38,11 +38,7 @@ that.resume.fetch({
         defaultContent: resume.get('markdown'),
         autoSave: 100
       },
-      button: {
-        preview: false,
-        fullscreen: false,
-        bar: "auto"
-      },
+      button: false,
       focusOnLoad: false,
       shortcut: {
         modifier: 18,
@@ -77,16 +73,15 @@ that.resume.fetch({
 
      
 
-var height = $(window).height() - 180; 
+var height = $(window).height() - 111; 
 $("#epiceditor").height(height);
         window.onresize = function() {
-var height = $(window).height() - 180; 
+var height = $(window).height() - 111; 
 var width = $(window).width(); 
 $("#epiceditor").height(height);
 $("#epiceditor").width(width);
 }
-
-        
+ 
 
 
 

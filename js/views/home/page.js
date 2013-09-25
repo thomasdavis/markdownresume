@@ -23,18 +23,21 @@ define([
     },
     saveResume: function () {
       var that = this;
+      $('.save-resume').removeClass('btn-success').addClass('btn-danger').text('Saving');
       this.resume.save({markdown: that.editor.exportFile()}, {
         success: function () {
-          console.log(arguments);
+          $('.save-resume').addClass('btn-success').removeClass('btn-warning').text('Save');
+        }, 
+        error: function () {
+          $('.save-resume').addClass('btn-success').removeClass('btn-warning').text('Save');
         }
       });
     },
     render: function () {
         var that = this;
         this.$el.hide().fadeIn(250);
+        $('.navbar-nav .edit-link').addClass('active');
         
-        $('.top-bar-menu li a.active').removeClass('active');
-        $('.top-bar-menu li a.home-button').addClass('active');
         if(Session.get('auth')){
           this.$el.html(Mustache.render(homeTemplate, {email: Session.get('email')}));
 
