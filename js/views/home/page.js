@@ -106,7 +106,8 @@ $("#epiceditor").width(width);
 })
 
         } else {
-          this.$el.html(Mustache.render(homeTemplate, {email: false, errors: Session.get('errors'), _: _})); 
+          that.$el.html(Mustache.render(homeTemplate, {email: null, resumeid: null, errors: Session.get('errors'), _: _})); 
+        that.$el.fadeIn(250);
         }
 
 
