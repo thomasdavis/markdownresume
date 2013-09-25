@@ -5,10 +5,9 @@ define([
   'extensions',
   'vm',
   'models/session',
-  'models/error',
   'text!templates/layout.html',
   'views/header/header',
-], function($, _, Backbone, extensions, Vm, Session, ErrorModel, layoutTemplate, HeaderView){
+], function($, _, Backbone, extensions, Vm, Session, layoutTemplate, HeaderView){
   var AppView = Backbone.View.extend({
     el: 'body',
     initialize: function () {
