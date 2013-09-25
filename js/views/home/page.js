@@ -35,14 +35,16 @@ define([
     },
     render: function () {
         var that = this;
-        this.$el.hide().fadeIn(250);
+        this.$el.hide();
         $('.navbar-nav .edit-link').addClass('active');
         
         if(Session.get('auth')){
-          this.$el.html(Mustache.render(homeTemplate, {email: Session.get('email')}));
 
 that.resume.fetch({
   success: function (resume) {
+          that.$el.html(Mustache.render(homeTemplate, {resumeid: resume.id, email: Session.get('email')}));
+        that.$el.fadeIn(250);
+
     var opts = {
       container: 'epiceditor',
       textarea: null,
@@ -88,14 +90,6 @@ that.resume.fetch({
         editor: '/css/epiceditor/themes/editor/epic-light.css'
       }
     }
-    that.editor = new EpicEditor(opts).load();
-  }
-})
-
-        } else {
-          this.$el.html(Mustache.render(homeTemplate, {email: false, errors: Session.get('errors'), _: _})); 
-        }
-
 var height = $(window).height() - 180; 
 $("#epiceditor").height(height);
         window.onresize = function() {
@@ -104,6 +98,17 @@ var width = $(window).width();
 $("#epiceditor").height(height);
 $("#epiceditor").width(width);
 }
+
+
+    that.editor = new EpicEditor(opts).load();
+
+  }
+})
+
+        } else {
+          this.$el.html(Mustache.render(homeTemplate, {email: false, errors: Session.get('errors'), _: _})); 
+        }
+
 
         
 
