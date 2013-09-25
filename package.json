@@ -1,7 +1,7 @@
 {
-  "name": "apiengine-client",
+  "name": "resume-client",
   "version": "0.0.1",
-  "description": "ApiEngine is going to kick ass",
+  "description": "",
   "keywords": [
     "api",
     "rest"
